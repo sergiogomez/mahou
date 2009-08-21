@@ -1,0 +1,12 @@
+mahou
+=====
+
+IMPORTANTE: Es una aplicación en desarrollo (de hecho aún no tiene nada). El objetivo principal es poner en práctica lo que voy aprendiendo de Rails, y de camino practicar también con Git. Toda opinión, crítica, insulto... o incluso algo de ayuda, se recibirá consecuentemente ;).
+
+La aplicación se usará semanalmente para las votaciones de los partidos de fútbol 7. Debe sustituir a la actual página de votaciones de Wufoo. En principio, habría que mantener jugadores, partidos, (no es necesario mantener equipos, pero no estaría mal, y que pudieran cambiar cada semana) y trofeos. También estaría bien que los mismos jugadores pudieran autenticarse a la hora de votar (evitar votos falsos, duplicados, etc.).
+
+Tras cada partido el administrador seleccionará los jugadores (14) que han participado, y los trofeos activos para dicho partido. En los trofeos participarán inicialmente todos los jugadores, aunque se podrán definir trofeos nuevos cada semana con uno o varios jugadores, hayan jugado o no.
+
+Se publica la página de votaciones, abierta hasta el día anterior al próximo partido (u otra fecha por definir), y una vez hayan votado todos los jugadores, o se cierre la votación, se publican los resultados, enviando un correo a todos los jugadores (hayan jugado o no).
+
+En principio se generará un fichero excel con los resultados, para usarse externamente. Pero lo ideal sería definir un sistema de puntuación (ahora mismo el primero de cada trofeo se lleva 3 puntos y el segundo 1 punto) para crear una página de clasificación, acumulando los resultados de todos los trofeos.
