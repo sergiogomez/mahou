@@ -1,0 +1,32 @@
+<%
+if action_name == "new" or action_name == "create"
+  title = "New player"
+  save = "Create"
+else
+  title = "Editing player"
+  save = "Update"
+end
+%>
+<h1><%= title %></h1>
+
+<% form_for(@player) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </p>
+  <p>
+    <%= f.label :nick %><br />
+    <%= f.text_field :nick %>
+  </p>
+  <p>
+    <%= f.submit save %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', players_path %>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="robots" content="noindex,nofollow" />
+  <%= stylesheet_link_tag "adminiziolite/css/reset", :media => "screen, projection" %><!-- RESET -->
+  <%= stylesheet_link_tag "adminiziolite/css/main", :media => "screen, projection" %><!-- MAIN STYLE SHEET -->
+  <%= stylesheet_link_tag "adminiziolite/css/2col", :media => "screen, projection" %><!-- DEFAULT: 2 COLUMNS -->
+  <%= stylesheet_link_tag "adminiziolite/css/1col", :media => "screen, projection", :rel => "stylesheet, alternate" %><!-- ALTERNATE: 1 COLUMN -->
+  <!--[if lte IE 6]><%= stylesheet_link_tag "adminiziolite/css/main-ie6", :media => "screen, projection" %><![endif]--><!-- MSIE6 -->
+  <%= stylesheet_link_tag "adminiziolite/css/style", :media => "screen, projection"  %><!-- GRAPHIC THEME -->
+  <%= stylesheet_link_tag "adminiziolite/css/mystyle", :media => "screen, projection"  %><!-- WRITE YOUR CSS CODE HERE -->
+  <%= javascript_include_tag "adminiziolite/js/jquery" %>
+  <%= javascript_include_tag "adminiziolite/js/switcher" %>
+  <%= javascript_include_tag "adminiziolite/js/toggle" %>
+  <%= javascript_include_tag "adminiziolite/js/ui.core" %>
+  <%= javascript_include_tag "adminiziolite/js/ui.tabs" %>
+  <script type="text/javascript">
+  $(document).ready(function(){
+          $(".tabs > ul").tabs();
+  });
+  </script>
+  <title>mahou</title>
+</head>
+<body>
+
+<div id="main">
+
+	<!-- Tray -->
+	<div id="tray" class="box">
+		<p class="f-left box">
+                  <strong><%= link_to "inicio", root_path %></strong>
+		</p>
+		<p class="f-right"></p>
+	</div> <!--  /tray -->
+	<hr class="noscreen" />
+	<!-- Menu -->
+          <%#= render :partial => "shared/menu", :class => "box", :locals => {:id => "menu", :active => "menu-active"} %>
+	<hr class="noscreen" />
+	<!-- Columns -->
+	<div id="cols" class="box">
+		<!-- Aside (Left Column) -->
+		<div id="aside" class="box">
+			<div class="padding box">
+			</div> <!-- /padding -->
+                        <%= render :partial => "shared/submenu", :class => "box", :locals => {:active => "submenu-active"} %>
+		</div> <!-- /aside -->
+		<hr class="noscreen" />
+		<!-- Content (Right Column) -->
+		<div id="content" class="box">
+                  <% unless flash[:notice].nil? %>
+                    <p class="msg done"><%= flash[:notice] %></p>
+                  <% end %>
+                  <% unless flash[:warning].nil? %>
+                    <p class="msg warning"><%= flash[:warning] %></p>
+                  <% end %>
+                  <% unless flash[:error].nil? %>
+                    <p class="msg error"><%= flash[:error] %></p>
+                  <% end %>
+                  <%= yield %>
+		</div> <!-- /content -->
+	</div> <!-- /cols -->
+	<hr class="noscreen" />
+	<!-- Footer -->
+	<div id="footer" class="box">
+          <p class="f-left"><%= link_to "sergiogomez", "http://github.com/sergiogomez/" %></p>
+          <p class="f-right">templates by <a href="http://www.adminizio.com/">Adminizio</a></p>
+	</div> <!-- /footer -->
+</div> <!-- /main -->
+</body>
+</html>

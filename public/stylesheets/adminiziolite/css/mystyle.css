@@ -1,0 +1,17 @@
+/* WRITE YOUR CSS CODE HERE */
+
+#content table,
+#content table td,
+#content table th {
+  border: 0;
+  padding: 3px;
+}
+
+table.wide {
+    width: 100%;
+}
+
+#content th.actions {
+    text-align: center;
+    width: 1%;
+}

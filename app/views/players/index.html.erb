@@ -1,0 +1,24 @@
+<h1>Listing players</h1>
+
+<% if !@players.empty? %>
+
+  <table class="wide">
+    <tr>
+      <th>Player</th>
+      <th colspan="2" class="actions">Actions</th>
+    </tr>
+
+  <% @players.each do |player| %>
+    <tr>
+      <td><%=h player.name %> <%=h player.surname %> "<em><%=h player.nick %></em>"</td>
+      <td><%= link_to 'Edit', edit_player_path(player) %></td>
+      <td><%= link_to 'Delete', player, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <% else %>
+    <p>There is no players. <%= link_to "Add the first!", new_player_path %></p>
+
+<% end %>
+
