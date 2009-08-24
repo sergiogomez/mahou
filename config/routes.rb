@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :games, :collection => { :played => :get}
+
   map.resources :players
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,27 @@
+<%
+if action_name == "new" or action_name == "create"
+  title = "New game"
+  save = "Create"
+else
+  title = "Editing game"
+  save = "Update"
+end
+%>
+<h1><%= title %></h1>
+
+<% form_for(@game) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date %> and <%= f.label "time", :time %><br />
+    <%= f.date_select :date %> - 
+    <%= f.time_select :time, :options => {:default => "19:00"} %>
+  </p>
+  <p>
+    <%= f.check_box :played %>
+    <%= f.label :played %>
+  </p>
+  <p>
+    <%= f.submit save %>
+  </p>
+<% end %>

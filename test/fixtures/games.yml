@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2009-08-24
+  time: 2009-08-24 22:12:47
+  played: false
+
+two:
+  date: 2009-08-24
+  time: 2009-08-24 22:12:47
+  played: false

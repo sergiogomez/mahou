@@ -1,0 +1,25 @@
+<h1>Listing games</h1>
+
+<% if !@games.empty? %>
+
+<table>
+  <tr>
+    <th>Date and time</th>
+    <th>Played</th>
+    <th colspan="2" class="actions">Actions</th>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%=h game.date %> (<%=h game.time %>)</td>
+    <td><%=h game.played %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+  <% else %>
+    <p>There is no games. <%= link_to "Add the first!", new_game_path %></p>
+
+<% end %>
