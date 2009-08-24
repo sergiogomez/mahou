@@ -1,0 +1,12 @@
+<h1>Game played <%= @game.date %> - <%= @game.time %></h1>
+<p>Choose who played this game:</p>
+<% form_for(@game) do |f| %>
+  <ul>
+    <% @players.each do |player| %>
+      <li><label><%= check_box_tag("game[player_ids][]", player.id, @game.players.include?(player)) %> <%= player.complete_name %></label></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>

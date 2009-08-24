@@ -78,6 +78,12 @@ class GamesController < ApplicationController
     end
   end
 
+  # GET /games/1/select_players
+  def select_players
+    @game = Game.find(params[:id])
+    @players = Player.all(:order => :name)
+  end
+
   private
 
   def path_after_success
