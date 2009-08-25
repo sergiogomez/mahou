@@ -1,0 +1,7 @@
+<h1>Game played <%= @game.date %> - <%= @game.time %></h1>
+<p>First choose trophy from this game:</p>
+  <ul>
+    <% @trophy_games.each do |trophy_game| %>
+      <li><%= link_to trophy_game.trophy.complete_title, select_players_game_trophy_game_path(@game,trophy_game) %></li>
+    <% end %>
+  </ul>

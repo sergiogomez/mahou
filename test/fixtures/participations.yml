@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  trophy_game_id: 1
+  player_id: 1
+
+two:
+  trophy_game_id: 1
+  player_id: 1

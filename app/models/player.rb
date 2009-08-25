@@ -3,6 +3,8 @@ class Player < ActiveRecord::Base
 
   has_many :player_games
   has_many :games, :through => :player_games
+  has_many :participations
+  has_many :trophy_games, :through => :participations
 
   attr_reader :complete_name
 

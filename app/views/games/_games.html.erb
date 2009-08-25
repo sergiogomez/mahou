@@ -6,7 +6,7 @@
   <tr>
     <th>Date and time</th>
     <th>Played</th>
-    <th colspan="2" class="actions">Actions</th>
+    <th colspan="3" class="actions">Actions</th>
   </tr>
 
 <% @games.each do |game| %>
@@ -16,8 +16,9 @@
     <% if game.played %>
       <td><%= link_to 'Select players', select_players_game_path(game) %></td>
       <td><%= link_to 'Select trophies', select_trophies_game_path(game) %></td>
+      <td><%= link_to 'Select players for trophies', game_trophy_games_path(game) %></td>
     <% else %>
-      <td><%= link_to 'Edit', edit_game_path(game) %></td>
+      <td colspan="2"><%= link_to 'Edit', edit_game_path(game) %></td>
       <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
