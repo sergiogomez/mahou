@@ -1,0 +1,26 @@
+<%
+if action_name == "new" or action_name == "create"
+  title = "New trophy"
+  save = "Create"
+else
+  title = "Editing trophy"
+  save = "Update"
+end
+%>
+<h1><%= title %></h1>
+
+<% form_for(@trophy) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit save %>
+  </p>
+<% end %>

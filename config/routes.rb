@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :trophies
+
   map.resources :games, :collection => { :played => :get }, :member => { :select_players => :get }
 
   map.resources :players

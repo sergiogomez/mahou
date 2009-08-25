@@ -1,0 +1,27 @@
+<h1>Listing trophies</h1>
+
+<% if !@trophies.empty? %>
+
+<table>
+  <tr>
+    <th>Trophy</th>
+    <th>Description</th>
+    <th>Game count (future)</th>
+    <th colspan="2" class="actions">Actions</th>
+  </tr>
+
+<% @trophies.each do |trophy| %>
+  <tr>
+    <td><%=h trophy.complete_title %></td>
+    <td><%=h trophy.description %></td>
+    <td><em>-</em></td>
+    <td><%= link_to 'Edit', edit_trophy_path(trophy) %></td>
+    <td><%= link_to 'Destroy', trophy, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+  <% else %>
+    <p>There is no trophies. <%= link_to "Add the first!", new_trophy_path %></p>
+
+<% end %>

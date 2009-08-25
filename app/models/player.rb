@@ -7,7 +7,7 @@ class Player < ActiveRecord::Base
   attr_reader :complete_name
 
   def complete_name
-    return self.name + " " + self.surname + " <em>" + self.nick + "</em>"
+    return "#{self.name} #{self.surname} <em>#{self.nick}</em>"
   end
 
 end

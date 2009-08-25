@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @trophy.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @trophy.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_trophy_path(@trophy) %> |
+<%= link_to 'Back', trophies_path %>
