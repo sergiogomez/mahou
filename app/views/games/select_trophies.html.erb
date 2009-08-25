@@ -1,0 +1,12 @@
+<h1>Game played <%= @game.date %> - <%= @game.time %></h1>
+<p>Choose trophies for this game:</p>
+<% form_for(@game) do |f| %>
+  <ul>
+    <% @trophies.each do |trophy| %>
+      <li><label><%= check_box_tag("game[trophy_ids][]", trophy.id, @game.trophies.include?(trophy)) %> <%= trophy.complete_title %></label></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>

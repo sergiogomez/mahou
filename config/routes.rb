@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :trophies
 
-  map.resources :games, :collection => { :played => :get }, :member => { :select_players => :get }
+  map.resources :games, :collection => { :played => :get }, :member => { :select_players => :get, :select_trophies => :get }
 
   map.resources :players
 

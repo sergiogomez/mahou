@@ -84,6 +84,12 @@ class GamesController < ApplicationController
     @players = Player.all(:order => :name)
   end
 
+  # GET /games/1/select_trophies
+  def select_trophies
+    @game = Game.find(params[:id])
+    @trophies = Trophy.all(:order => :title)
+  end
+
   private
 
   def path_after_success

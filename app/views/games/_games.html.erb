@@ -14,7 +14,8 @@
     <td><%=h game.date %> (<%=h game.time %>)</td>
     <td><%=h game.played %></td>
     <% if game.played %>
-      <td colspan="2"><%= link_to 'Select players', select_players_game_path(game) %></td>
+      <td><%= link_to 'Select players', select_players_game_path(game) %></td>
+      <td><%= link_to 'Select trophies', select_trophies_game_path(game) %></td>
     <% else %>
       <td><%= link_to 'Edit', edit_game_path(game) %></td>
       <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
